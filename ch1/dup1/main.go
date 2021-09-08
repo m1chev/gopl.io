@@ -15,9 +15,13 @@ import (
 )
 
 func main() {
+	fmt.Println("(i) To exit type 'end' on new line and hit enter!\n")
 	counts := make(map[string]int)
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {
+		if input.Text() == "end" {
+			break
+		}
 		counts[input.Text()]++
 	}
 	// NOTE: ignoring potential errors from input.Err()

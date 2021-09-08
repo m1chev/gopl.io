@@ -16,9 +16,12 @@ func main() {
 	var s, sep string
 	for i := 1; i < len(os.Args); i++ {
 		s += sep + os.Args[i]
-		sep = " "
+		sep = "\n"
 	}
 	fmt.Println(s)
+	if os.Args[1] == "hello" {
+		fmt.Printf("You have it right the correct word is '%v'\n", os.Args[1])
+	}
 }
 
 //!-
